@@ -32,6 +32,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use OmniAuth/Github for authentication
+gem "omniauth"
+gem "omniauth-github"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -43,4 +47,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Improve the error message you get in the browser
+  gem 'better_errors'
+
+  # Use pry for rails console
+  gem 'pry-rails'
 end
