@@ -20,7 +20,7 @@ class ActiveSupport::TestCase
     # The mock_auth configuration allows you to set per-provider (or default) authentication
     # hashes to return during testing.
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-      provider: 'github', uid: '123545', info: { email: "a@b.com", name: "Ada" }
+      provider: 'github', uid: '9999', info: { email: "a@b.com", name: "Ada" }
       })
     end
 end

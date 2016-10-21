@@ -8,8 +8,8 @@ grace:
   email: "grace.hooper@adadevelopersacedemy.org"
   uid: 12345
   provider: "github"
-no_articles_user:
-  name: "No Articles"
-  email: "no_articles@gmail.com"
+no_pages_user:
+  name: "No Pages"
+  email: "no_pages@gmail.com"
   uid: 67890
   provider: "github"
