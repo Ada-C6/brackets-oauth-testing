@@ -57,3 +57,7 @@ group :development do
   # Use pry for rails console
   gem 'pry-rails'
 end
+
+group :test do
+  gem 'minitest-reporters'
+end
