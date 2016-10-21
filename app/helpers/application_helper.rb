@@ -13,4 +13,17 @@ module ApplicationHelper
       return "ERROR: user not in database"
     end
   end
+
+  def login_button
+    if session[:user_id].nil?
+      text = "Log In"
+      path = login_path
+      method = :get
+    else
+      text = "Log Out"
+      path = logout_path
+      method = :delete
+    end
+    link_to text, path, method: method
+  end
 end

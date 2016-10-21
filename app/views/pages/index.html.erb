@@ -1,0 +1,13 @@
+<%= link_to "Create a new page", new_page_path %>
+<section>
+  <h1>Your diary pages</h1>
+  <ul>
+    <% Page.by_date.each do |page| %>
+      <li>
+        <%= link_to page.title, page %>
+        <%= link_to "Edit", edit_path(page) %>
+        <%= link_to "Delete", page, method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</section>

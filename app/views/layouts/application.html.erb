@@ -5,8 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li class="menu-text">Diary</li>
+        <li><%= link_to "Pages", pages_path %></li>
+        <li><%= link_to "New Page", new_page_path %></li>
+        <li><%= login_button %></li>
+      </ul>
+    </nav>
+  </header>
 
   <% if session[:user_id].nil? %>
     <p>Not logged in</p>

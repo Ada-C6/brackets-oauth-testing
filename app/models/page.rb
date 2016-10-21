@@ -3,4 +3,8 @@ class Page < ActiveRecord::Base
 
   validates :title, presence: true
   validates :user_id, presence: true
+
+  def self.by_date
+    order(:created_at).reverse
+  end
 end
