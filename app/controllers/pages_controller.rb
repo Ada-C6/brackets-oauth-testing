@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :find_page, only: [:show, :edit, :update, :delete]
   def index
   end
 
@@ -17,15 +18,12 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = find_page
   end
 
   def edit
-    @page = find_page
   end
 
   def update
-    @page = find_page
     @page.assign_attributes(page_params)
     if @page.save
       redirect_to page_path(@page)
@@ -35,7 +33,6 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page = find_page
   end
 
 private
@@ -43,11 +40,9 @@ private
       params.require(:page).permit(:title, :content)
     end
 
-    # Could be a model method, but because it's got the render
-    # I think it fits better here.
     def find_page
       begin
-        return Page.find(params[:id])
+        @page = Page.find(params[:id])
       rescue ActiveRecord::RecordNotFound
         render file: "public/404", status: :not_found
       end

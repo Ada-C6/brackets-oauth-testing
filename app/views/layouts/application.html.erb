@@ -16,16 +16,11 @@
         <li><%= link_to "New Page", new_page_path %></li>
       </ul>
       <ul class="menu top-bar-right">
+        <li class="menu-text"><%= login_status %></li>
         <li><%= login_button %></li>
       </ul>
     </nav>
   </header>
-
-  <% if session[:user_id].nil? %>
-    <p>Not logged in</p>
-  <% else %>
-    <p>Logged in as <%= user_name %></p>
-  <% end %>
 
   <main class="row">
     <%= yield %>

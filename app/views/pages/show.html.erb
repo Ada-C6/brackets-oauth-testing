@@ -1,0 +1,10 @@
+<section>
+  <h1><%= @page.title %></h1>
+  <h3>Diary entry from <%= render_date(@page.created_at) %></h3>
+  <p><%= @page.content %></p>
+</section>
+<section class="row">
+  <%= link_to "Page Index", pages_path, class: "button small-4 large-2 columns" %>
+  <%= link_to "Edit This Page", edit_page_path(@page), class: "button small-4 large-2 columns" %>
+  <%= link_to "Delete This Page", page_path(@page), method: :delete, class: "alert button small-4 large-2 columns end" %>
+</section>

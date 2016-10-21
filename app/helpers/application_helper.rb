@@ -14,6 +14,14 @@ module ApplicationHelper
     end
   end
 
+  def login_status
+    if session[:user_id].nil?
+      "Not logged in"
+    else
+      "Logged in as #{user_name}"
+    end
+  end
+
   def login_button
     if session[:user_id].nil?
       text = "Log In"
@@ -25,5 +33,9 @@ module ApplicationHelper
       method = :delete
     end
     link_to text, path, method: method
+  end
+
+  def render_date(date)
+    ("<span class='date'>" + date.strftime("%A, %b %d %Y") + "</span>").html_safe
   end
 end

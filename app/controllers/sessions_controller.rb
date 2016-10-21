@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:login, :create]
+
   def login
     # Just a booring static page
   end
