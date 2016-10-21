@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <% if session[:user_id].nil? %>
+    <p>Not logged in</p>
+  <% else %>
+    <p>Logged in as <%= user_name %></p>
+  <% end %>
+
 <%= yield %>
 
 </body>
