@@ -14,4 +14,4 @@
  *= require_self
  */
 
-@import "foundation_and_overrides";
+@import url("foundation.min.css");
