@@ -1,0 +1,32 @@
+<% if @page.errors.any? %>
+  <section class="row">
+    <table>
+      <tr>
+        <th>Field</th>
+        <th>Problem</th>
+      </tr>
+      <% @page.errors.each do |field, problem| %>
+        <tr>
+          <td><%= field %></td>
+          <td><%= problem %></td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
+<% end %>
+
+<section class="large-8 small-12 end columns">
+  <%= form_for @page, class: "row" do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <div class="row">
+      <%= link_to "Page Index", pages_path, class: "secondary button large-2 small-4 columns" %>
+      <%= conditional_page_link @page, class: "secondary button large-2 small-4 columns" %>
+      <%= f.submit "Submit", class: "success button large-2 small-4 columns" %>
+    </div>
+  <% end %>
+</section>
