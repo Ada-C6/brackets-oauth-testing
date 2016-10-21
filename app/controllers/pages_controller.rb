@@ -45,7 +45,7 @@ private
 
     def find_page
       begin
-        @page = @current_user.pages.find(params[:id])
+        @page = Page.find(params[:id])
       rescue ActiveRecord::RecordNotFound
         render file: "public/404", status: :not_found
       end
