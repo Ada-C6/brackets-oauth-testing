@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_action :find_page, only: [:show, :edit, :update, :delete]
   def index
+    @pages = @current_user.pages.by_date
   end
 
   def new
@@ -42,7 +43,7 @@ private
 
     def find_page
       begin
-        @page = Page.find(params[:id])
+        @page = @current_user.pages.find(params[:id])
       rescue ActiveRecord::RecordNotFound
         render file: "public/404", status: :not_found
       end

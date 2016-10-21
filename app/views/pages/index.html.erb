@@ -4,7 +4,7 @@
     <%= link_to "Create a new page", new_page_path, class: "button large-2 small-12 columns" %>
   </div>
   <table class="hover">
-    <% Page.by_date.each do |page| %>
+    <% @pages.each do |page| %>
       <tr>
         <!-- TODO DPR: make the links into buttons -->
         <td><%= link_to page.title, page %></td>
