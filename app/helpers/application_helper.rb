@@ -22,7 +22,7 @@ module ApplicationHelper
     end
   end
 
-  def login_button
+  def login_button(**kwargs)
     if session[:user_id].nil?
       text = "Log In"
       path = login_path
@@ -32,10 +32,14 @@ module ApplicationHelper
       path = logout_path
       method = :delete
     end
-    link_to text, path, method: method
+    link_to text, path, method: method, **kwargs
   end
 
   def render_date(date)
     ("<span class='date'>" + date.strftime("%A, %b %d %Y") + "</span>").html_safe
+  end
+
+  def delete_link(item, **kwargs)
+    link_to "Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete this?" }, **kwargs
   end
 end

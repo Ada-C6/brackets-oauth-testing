@@ -9,7 +9,7 @@
         <!-- TODO DPR: make the links into buttons -->
         <td><%= link_to page.title, page %></td>
         <td><%= link_to "Edit", edit_page_path(page) %></td>
-        <td><%= link_to "Delete", page, method: :delete %></td>
+        <td><%= delete_link page %></td>
       </tr>
     <% end %>
   </table>

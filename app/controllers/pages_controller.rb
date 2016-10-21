@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :find_page, only: [:show, :edit, :update, :delete]
+  before_action :find_page, only: [:show, :edit, :update, :destroy]
   def index
     @pages = @current_user.pages.by_date
   end
@@ -34,6 +34,8 @@ class PagesController < ApplicationController
   end
 
   def destroy
+    @page.destroy
+    redirect_to pages_path
   end
 
 private
