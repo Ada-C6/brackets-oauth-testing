@@ -9,11 +9,13 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="menu">
+    <nav class="top-bar">
+      <ul class="menu top-bar-left">
         <li class="menu-text">Diary</li>
         <li><%= link_to "Pages", pages_path %></li>
         <li><%= link_to "New Page", new_page_path %></li>
+      </ul>
+      <ul class="menu top-bar-right">
         <li><%= login_button %></li>
       </ul>
     </nav>
