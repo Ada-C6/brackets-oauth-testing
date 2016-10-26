@@ -9,11 +9,20 @@
 </head>
 <body>
   <header>
-    <nav class="top-bar">
-      <ul class="menu top-bar-left">
+    <nav class="top-bar" data-top-bar>
+      <ul class="dropdown menu top-bar-left" data-dropdown-menu>
         <li class="menu-text">Diary</li>
         <li><%= link_to "Pages", pages_path %></li>
-        <li><%= link_to "New Page", new_page_path %></li>
+        <li class="has-dropdown">
+          <%= link_to "New Page", new_page_path %>
+          <ul class="menu">
+            <li><a href="#">This</a></li>
+            <li><a href="#">Is</a></li>
+            <li><a href="#">A</a></li>
+            <li><a href="#">Dropdown</a></li>
+            <li><a href="#">Menu</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="menu top-bar-right">
         <li class="menu-text"><%= login_status %></li>
@@ -21,6 +30,42 @@
       </ul>
     </nav>
   </header>
+
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+		<li class="name">
+				<h1><a href="#">LOGO</a></h1>
+		</li>
+	</ul>
+	<section class="top-bar-section">
+	    <ul class="left">
+			<li class="divider"></li>
+			<li class="active"><a href="#">Menu Item 1</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Menu Item 2</a></li>
+			<li class="divider"></li>
+			<li class="has-dropdown"><a href="#">Menu Item 3</a></li>
+				<ul class="dropdown">
+					<li><a href="#">Submenu 1 </a></li>
+					<li><a href="#">Submenu 2</a></li>
+					<li><a href="#">Submenu 3</a></li>
+					<li><a href="#">Submenu 4</a></li>
+				</ul>
+		</ul>
+	</section>
+</nav>
+
+
+  <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Has Dropdown</a>
+  <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a>
+  <div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
+    <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
+  </div>
 
   <main class="row">
     <%= yield %>

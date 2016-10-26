@@ -39,7 +39,24 @@ module ApplicationHelper
     ("<span class='date'>" + date.strftime("%A, %b %d %Y") + "</span>").html_safe
   end
 
-  def delete_link(item, **kwargs)
-    link_to "Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete this?" }, **kwargs
+  def delete_link(item, klass="")
+    klass += " alert button"
+    link_to "Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete this?" }, class: klass
   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
