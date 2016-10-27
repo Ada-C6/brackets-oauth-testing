@@ -26,8 +26,13 @@ class PagesController < ApplicationController
   end
 
   def show
+    # Stuff we put in the session will persist as long as
+    # the browser stays open, regardless of any page loads
     session[:last_page] = @page.id
 
+    # Stuff we put in the flash will be returned by the broser
+    # exactly once. So, it's available on this request, and
+    # on the next one, and that's it.
     flash[:experiment] = "this is a test"
   end
 
