@@ -44,6 +44,25 @@ module ApplicationHelper
     link_to "Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete this?" }, class: klass
   end
 
+  def upvote_link(item, klass="")
+    # Note: while this button sends the right type
+    # of request, we currently don't have any
+    # ranking implemented on the server.
+    klass += " warning button"
+    capture do
+      form_for item, method: :patch, html: { class: "button-form" } do |f|
+        concat f.hidden_field :upvote, value: true
+        concat f.submit "Upvote", class: klass
+      end
+    end
+  end
+
+  def nicole_button
+    # html_safe is idempotent! woah!
+    link = link_to "Whatever", "#"
+    "<div class=\"foo bar\">#{link}</div>".html_safe
+  end
+
 
 
 

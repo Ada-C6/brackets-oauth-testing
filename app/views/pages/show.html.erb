@@ -4,7 +4,11 @@
   <p><%= @page.content %></p>
 </section>
 <section class="row">
-  <%= link_to "Page Index", pages_path, class: "button small-4 large-2 columns" %>
-  <%= link_to "Edit This Page", edit_page_path(@page), class: "button small-4 large-2 columns" %>
-  <%= delete_link @page, "small-4 large-2 columns end" %>
+  <%= link_to "Page Index", pages_path, class: "button small-3 large-2 columns" %>
+  <%= link_to "Edit This Page", edit_page_path(@page), class: "button small-3 large-2 columns" %>
+  <!-- TODO DPR: if upvote comes before link, it still renders after.
+        Not sure why, probably something to do with the fact that the
+        button is nested inside a form. -->
+  <%= delete_link @page, "small-3 large-2 columns" %>
+  <%= upvote_link @page, "small-3 large-2 columns end" %>
 </section>
